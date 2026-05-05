@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Ensemble Learning Dashboard</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
+        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Analisis Ensemble Learning</h1>
+    <p>Berdasarkan materi: <strong>DM06.pdf - Klasifikasi Ensemble Methods</strong></p>
+
+    <div class="card">
+        <h2>Hasil Perbandingan Akurasi</h2>
+        <table>
+            <tr><th>Metode</th><th>Prinsip</th><th>Akurasi</th></tr>
+            <tr><td>Decision Tree</td><td>Single Model</td><td>94.15%</td></tr>
+            <tr><td>Random Forest</td><td>Bagging</td><td>97.08%</td></tr>
+            <tr><td>Gradient Boosting</td><td>Boosting</td><td>95.91%</td></tr>
+            <tr><td><strong>Stacking</strong></td><td><strong>Meta-Learner</strong></td><td><strong>98.25%</strong></td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Visualisasi Confusion Matrix</h2>
+        <!-- Anda bisa memasukkan gambar hasil plot Python di sini -->
+        <img src="confusion_matrix.png" alt="Confusion Matrix" style="width:100%">
+    </div>
+</body>
+</html>
