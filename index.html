@@ -2,34 +2,57 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Ensemble Learning Dashboard</title>
+    <title>Portfolio Data Mining - Rafid Hadi Zuhair</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
-        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f4f4f4; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: auto; padding: 20px; background: #f4f7f9; }
+        .header { text-align: center; background: #1a3a5f; color: white; padding: 2rem; border-radius: 10px; }
+        .section { background: white; padding: 20px; border-radius: 8px; margin-top: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #2c5d91; color: white; }
+        .code { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; font-family: monospace; overflow-x: auto; }
     </style>
 </head>
 <body>
-    <h1>Analisis Ensemble Learning</h1>
-    <p>Berdasarkan materi: <strong>DM06.pdf - Klasifikasi Ensemble Methods</strong></p>
+    <div class="header">
+        <h1>Integrasi Data Mining: Clustering & Ensemble</h1>
+        <p>Implementasi Materi DM06 Universitas Pamulang & Evaluasi Model</p>
+    </div>
 
-    <div class="card">
-        <h2>Hasil Perbandingan Akurasi</h2>
+    <div class="section">
+        <h2>Fase 1: Eksplorasi (Unsupervised)</h2>
+        <p>Menggunakan K-Means untuk identifikasi pola awal dan dievaluasi menggunakan Confusion Matrix sesuai referensi artikel Medium.</p>
+    </div>
+
+    <div class="section">
+        <h2>Fase 2: Prediksi Terintegrasi (Ensemble)</h2>
+        <p>Berdasarkan materi <strong>DM06.pdf</strong>, berikut adalah hasil perbandingan metode ensemble:</p>
         <table>
-            <tr><th>Metode</th><th>Prinsip</th><th>Akurasi</th></tr>
-            <tr><td>Decision Tree</td><td>Single Model</td><td>94.15%</td></tr>
-            <tr><td>Random Forest</td><td>Bagging</td><td>97.08%</td></tr>
-            <tr><td>Gradient Boosting</td><td>Boosting</td><td>95.91%</td></tr>
-            <tr><td><strong>Stacking</strong></td><td><strong>Meta-Learner</strong></td><td><strong>98.25%</strong></td></tr>
+            <tr><th>Metode</th><th>Strategi Utama</th><th>Fungsi Teknik</th></tr>
+            <tr><td>Bagging</td><td>Random Forest</td><td>Mengurangi Variance (Cegah Overfitting)[cite: 1]</td></tr>
+            <tr><td>Boosting</td><td>Gradient Boosting</td><td>Mengurangi Bias (Atasi Underfitting)[cite: 1]</td></tr>
+            <tr><td><strong>Stacking</strong></td><td><strong>Meta-Learner</strong></td><td><strong>Akurasi Maksimal (Hybrid)[cite: 1]</strong></td></tr>
         </table>
     </div>
 
-    <div class="card">
-        <h2>Visualisasi Confusion Matrix</h2>
-        <!-- Anda bisa memasukkan gambar hasil plot Python di sini -->
-        <img src="confusion_matrix.png" alt="Confusion Matrix" style="width:100%">
+    <div class="section">
+        <h2>Visualisasi Hasil</h2>
+        <img src="confusion_matrix.png" alt="Confusion Matrix Stacking" style="width:100%; border-radius: 5px;">
     </div>
+
+    <div class="section">
+        <h2>Snippet Implementasi Stacking</h2>
+        <div class="code">
+# Sesuai Materi Stacking DM06.pdf[cite: 1]
+stacking = StackingClassifier(
+    estimators=[('rf', rf_model), ('gb', gb_model)], 
+    final_estimator=LogisticRegression()
+)
+        </div>
+    </div>
+
+    <p style="text-align: center; margin-top: 30px; font-size: 0.9em; color: #666;">
+        © 2026 Rafid Hadi Zuhair - Tugas Data Mining Terintegrasi
+    </p>
 </body>
 </html>
